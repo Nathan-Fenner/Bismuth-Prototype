@@ -11,7 +11,7 @@ lexer :: FilePath -> String -> [(LexerClass, Token)]
 lexer file source = lexer' file 1 1 source
 
 specialNames :: [String]
-specialNames = ["module", "where", "var", "let", "if", "else", "while", "class", "instance", "func", "type"]
+specialNames = ["module", "where", "var", "let", "if", "else", "while", "class", "instance", "func", "type", "struct", "union", "of"]
 
 lexer' :: FilePath -> Int -> Int -> String -> [(LexerClass, Token)]
 lexer' _file _line _column "" = []

@@ -6,11 +6,15 @@ import Lexer
 data Module = Module [ModuleDeclaration] deriving Show
 data ModuleDeclaration
   = FuncDeclaration Token FuncDefinition
+  | StructDeclaration Token StructDefinition
+  | UnionDeclaration Token UnionDefinition
   deriving Show
   -- TODO: classes, instances, imports.
 data FuncDefinition = FuncDefinition [Generic] [(Token, TypeTerm)] TypeTerm Block deriving Show
+data StructDefinition = StructDefinition [Generic] [(Token, TypeTerm)] deriving Show
+data UnionDefinition = UnionDefinition [Generic] [(Token, [TypeTerm])] deriving Show
 data Generic = Generic Token Kind deriving Show -- TODO: constraints
-data Kind = KConcrete | KArrow Kind Kind deriving Show
+data Kind = KConcrete | KArrow Kind Kind deriving (Eq, Show)
 data TypeTerm = TName Token | TApply TypeTerm TypeTerm deriving Show
 data Type = Type [Generic] TypeTerm deriving Show
 data Block = Block [Statement] deriving Show

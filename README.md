@@ -1,6 +1,8 @@
-# Bismuth
+# Bismuth-Prototype
 
 Bismuth is a purely functional programming language with first-class effects and an imperative feel.
+
+This is a prototype implementation that is no longer under development. The new compiler will be published soon, with some major changes to the language.
 
 ## Hello, World!
 
